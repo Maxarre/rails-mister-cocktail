@@ -16,16 +16,22 @@ class CocktailsController < ApplicationController
   def create
     @cocktail = Cocktail.new(params_cocktail)
     if @cocktail.save
-      redirect_to @cocktail
+      redirect_to cocktails_path
     else
       render :new
     end
   end
 
   def update
+    @cocktail = Cocktail.find(params[:id])
+    @cocktail.update(params_cocktail)
+    redirect_to cocktails_path
   end
 
   def destroy
+    @cocktail = Cocktail.find(params[:id])
+    @cocktail.destroy
+    redirect_to cocktails_path
   end
 
   private
