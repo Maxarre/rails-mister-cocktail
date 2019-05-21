@@ -1,7 +1,6 @@
-<h2><%= link_to "Home", cocktails_path %></h2>
+<h2><%= link_to "Home", cocktails_path, class: "btn btn-secondary" %></h2>
 
 <h1><%= @cocktail.name %></h1>
-<p><%= link_to "Add ingredients", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %></p>
 <ul>
   <% @cocktail.doses.each do |dose| %>
   <li>
@@ -9,3 +8,5 @@
   </li>
   <% end %>
 </ul>
+
+<p><%= link_to "Add ingredients", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %></p>

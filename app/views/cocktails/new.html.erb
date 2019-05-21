@@ -1,8 +1,10 @@
-<h2><%= link_to "Home", cocktails_path %></h2>
+<h2><%= link_to "Home", cocktails_path, class: "btn btn-secondary" %></h2>
 
 <h2>Add a new cocktail</h2>
 
 <%= simple_form_for [ @cocktail ] do |f| %>
   <%= f.input :name %>
+  <%= f.input :cdescription %>
+  <%= f.input :image_url %>
   <%= f.submit "Add", class: "btn btn-primary" %>
 <% end %>

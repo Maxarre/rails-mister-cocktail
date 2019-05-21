@@ -1,15 +1,20 @@
 <h1>Cocktails</h1>
-
-<% @cocktails.each do |cocktail| %>
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title"><%= link_to cocktail.name, cocktail_path(cocktail) %></h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-danger"> Delete Cocktail<% link_to '', cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } %></a>
+<div class="container">
+  <div class="row">
+  <% @cocktails.each do |cocktail| %>
+    <div class="col-sm">
+    <div class="card" style="width: 18rem;">
+      <img src="<%= cocktail.image_url %>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= cocktail.name %></h5>
+        <p class="card-text"><%= cocktail.cdescription %></p>
+        <a href="#"><%= link_to 'Recipe', cocktail_path(cocktail), class: "btn btn-secondary" %></a>
+        <a href="#"><%= link_to 'Delete Cocktail', cocktail_path(cocktail), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" } %></a>
+      </div>
+    </div>
+    </div>
+  <% end %>
   </div>
-</div>
-<% end %>
-
 
 <p><%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-primary" %></p>
+</div>
