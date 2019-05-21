@@ -1,5 +1,9 @@
-<h1>Cocktails#new</h1>
-<p>Find me in app/views/cocktails/new.html.erb</p>
+<h2><%= link_to "Home", cocktails_path %></h2>
 
+<h2>Add a new cocktail</h2>
 
-<p><%= link_to "Back to list", cocktails_path %></p>
+<%= simple_form_for [ @cocktail ] do |f| %>
+  <%= f.input :name %>
+
+  <%= f.submit "Add", class: "btn btn-primary" %>
+<% end %>
