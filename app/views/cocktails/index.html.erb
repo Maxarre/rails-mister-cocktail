@@ -1,5 +1,13 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path("cocktails_banner") %>)">
+  <div class="container">
+    <h1>Mister Cocktail</h1>
+    <p>Keep Calm and have a Cocktail</p>
+  </div>
+</div>
+
 <div class="container">
   <h1>Cocktails</h1>
+  <p><%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-primary" %></p>
   <div class="row">
   <% @cocktails.each do |cocktail| %>
     <div class="col-sm">
@@ -15,6 +23,4 @@
     </div>
   <% end %>
   </div>
-
-<p><%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-primary" %></p>
 </div>
