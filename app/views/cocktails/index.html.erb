@@ -17,4 +17,10 @@
   </div>
 
 <p><%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-primary" %></p>
+
+<%= cl_image_tag("Maxence",
+      width: 400, height: 300, crop: :fill) %>
+
+<%= cl_image_tag("frigo_01",
+      width: 150, height: 150, crop: :thumb, gravity: :face) %>
 </div>
