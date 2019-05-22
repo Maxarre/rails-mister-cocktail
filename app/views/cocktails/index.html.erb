@@ -8,8 +8,8 @@
       <div class="card-body">
         <h5 class="card-title"><%= cocktail.name %></h5>
         <p class="card-text"><%= cocktail.cdescription %></p>
-        <a href="#"><%= link_to 'Recipe', cocktail_path(cocktail), class: "btn btn-outline-secondary" %></a>
-        <a href="#"><%= link_to 'Delete Cocktail', cocktail_path(cocktail), method: :delete, class: "btn btn-outline-danger", data: { confirm: "Are you sure?" } %></a>
+        <%= link_to 'Recipe', cocktail_path(cocktail), class: "btn btn-outline-secondary" %>
+        <%= link_to 'Delete Cocktail', cocktail_path(cocktail), method: :delete, class: "btn btn-outline-danger", data: { confirm: "Are you sure?" } %>
       </div>
     </div>
     </div>
