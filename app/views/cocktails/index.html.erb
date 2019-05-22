@@ -4,7 +4,7 @@
   <% @cocktails.each do |cocktail| %>
     <div class="col-sm">
     <div class="card" style="width: 18rem;">
-      <img src="<%= cocktail.image_url %>" class="card-img-top" alt="...">
+      <%= cl_image_tag cocktail.photo, class: "card-img-top" %>
       <div class="card-body">
         <h5 class="card-title"><%= cocktail.name %></h5>
         <p class="card-text"><%= cocktail.cdescription %></p>
@@ -17,10 +17,4 @@
   </div>
 
 <p><%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-primary" %></p>
-
-<%= cl_image_tag("Maxence",
-      width: 400, height: 300, crop: :fill) %>
-
-<%= cl_image_tag("frigo_01",
-      width: 150, height: 150, crop: :thumb, gravity: :face) %>
 </div>
