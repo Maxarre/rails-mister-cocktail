@@ -7,7 +7,7 @@
 
 <div class="container">
   <h1>Cocktails</h1>
-  <p><%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-primary" %></p>
+  <p><%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-primary", id: "primary" %></p>
   <div class="row">
   <% @cocktails.each do |cocktail| %>
     <div class="col-sm">
@@ -16,8 +16,8 @@
       <div class="card-body">
         <h5 class="card-title"><%= cocktail.name %></h5>
         <p class="card-text"><%= cocktail.cdescription %></p>
-        <%= link_to 'Recipe', cocktail_path(cocktail), class: "btn btn-outline-secondary" %>
-        <%= link_to 'Delete Cocktail', cocktail_path(cocktail), method: :delete, class: "btn btn-outline-danger", data: { confirm: "Are you sure?" } %>
+        <%= link_to 'Recipe', cocktail_path(cocktail), class: "btn btn-outline-secondary", id: "second" %>
+        <%= link_to 'Delete Cocktail', cocktail_path(cocktail), method: :delete, class: "btn btn-outline-danger", id: "danger", data: { confirm: "Are you sure?" } %>
       </div>
     </div>
     </div>
